@@ -5,9 +5,10 @@ const Temperature = require('./model/temperture');
 const mongoose = require('mongoose');
 
 app.use(bodyParser.json());
-const PORT = (process.ENV && process.ENV.PORT) || 3000;
-const URL_MONGO = (process.ENV && process.ENV.MONGO_URL) || "mongodb://localhost:27017/";
-
+const PORT = (process.env && process.env.PORT) || 3000;
+const URL_MONGO = (process.env && process.env.MONGO_URL) || "mongodb://localhost:27017/";
+console.log(PORT)
+console.log(URL_MONGO)
 
 mongoose.connect(URL_MONGO, 
 { useNewUrlParser: true, useUnifiedTopology: true, retryWrites: true, dbName: 'final_homework' });
